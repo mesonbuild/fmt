@@ -1,6 +1,6 @@
-project('fmt', 'cpp', version : '4.1.0', license: 'BSD', default_options : ['cpp_std=c++14'])
+project('fmt', 'cpp', version : '5.2.0', license: 'BSD', default_options : ['cpp_std=c++14'])
 
-inc = include_directories('.')
-lib = library('fmt', ['fmt/format.cc', 'fmt/ostream.cc', 'fmt/printf.cc'])
+inc = include_directories('include')
+lib = library('fmt', ['src/format.cc', 'src/posix.cc'], include_directories : inc)
 
 fmt_dep = declare_dependency(include_directories : inc, link_with : lib)
