@@ -1,0 +1,6 @@
+[wrap-file]
+directory = fmt-5.3.0
+
+source_url = https://github.com/fmtlib/fmt/archive/5.3.0.tar.gz
+source_filename = fmt-5.3.0.tar.gz
+source_hash = defa24a9af4c622a7134076602070b45721a43c51598c8456ec6f2c4dbb51c89
