@@ -27,3 +27,8 @@ fmt_dep = declare_dependency(
     compile_args : fmt_interface_cpp_args,
     link_with : fmt_lib
 )
+
+fmt_header_only_dep = declare_dependency(
+    include_directories : fmt_inc,
+    compile_args : '-DFMT_HEADER_ONLY'
+)
