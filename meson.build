@@ -12,11 +12,6 @@ if libtype == 'shared'
     fmt_interface_cpp_args += [ '-DFMT_SHARED' ]
 endif
 
-if get_option('fmt_header_only')
-    add_project_arguments('-DFMT_HEADER_ONLY')
-endif
-
-
 fmt_inc = include_directories('include')
 fmt_lib = library('fmt',
     sources : [

@@ -1,1 +1,0 @@
-option('fmt_header_only', type : 'boolean', value : false, description : 'Use fmt as header-only library' )
