@@ -13,13 +13,26 @@ if libtype == 'shared'
 endif
 
 fmt_inc = include_directories('include')
+fmt_lib_soversion = meson.project_version().split('.')[0]
 fmt_lib = library('fmt',
     sources : [
         'src/format.cc',
         'src/os.cc'
     ],
     cpp_args : fmt_private_cpp_args,
-    include_directories : fmt_inc
+    include_directories : fmt_inc,
+    soversion: fmt_lib_soversion,
+    version: meson.project_version(),
+    install: libtype == 'shared'
+)
+
+install_subdir('include/fmt', install_dir: 'include')
+
+pkgc = import('pkgconfig')
+pkgc.generate(fmt_lib,
+    name: 'fmt',
+    version: meson.project_version(),
+    description: 'A modern formatting library'
 )
 
 fmt_dep = declare_dependency(
